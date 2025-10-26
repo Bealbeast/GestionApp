@@ -3,6 +3,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import TareaForm
 from .models import Tarea
 
+def home(request):
+    return redirect('dashboard')
+
 @login_required
 def dashboard(request):
     UserTareas = Tarea.objects.filter(usuario=request.user, completada=False).order_by('fecha_limite')
