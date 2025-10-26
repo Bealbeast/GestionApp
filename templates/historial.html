@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5 text-white">
+    <h2>Historial de tareas completadas ✅</h2>
+    <ul class="list-group">
+        {% for tarea in tareas %}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+            <strong>{{ tarea.nombre }}</strong><br>
+            <small>Prioridad: {{ tarea.get_prioridad_display }} – Completada el: {{ tarea.fecha_limite|date:"d M Y H:i" }}</small>
+            </div>
+            <a href="{% url 'desmarcar_tarea' tarea.id %}" class="btn btn-sm btn-warning">↩ Deshacer</a>
+        </li>
+        {% empty %}
+        <li class="list-group-item">No hay tareas completadas aún.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
