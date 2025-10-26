@@ -8,6 +8,7 @@ Django==5.2.5
 django-allauth==65.12.1
 django-crispy-forms==2.4
 django-pwa==2.0.1
+gunicorn==23.0.0
 idna==3.10
 jpype1==1.5.2
 line_profiler==4.2.0
