@@ -8,7 +8,6 @@ from coloapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
-    path('', include('pwa.urls')),
     path('', views.home, name='home'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('agreagar/', views.agregar_tarea, name='agregar_tarea' ),

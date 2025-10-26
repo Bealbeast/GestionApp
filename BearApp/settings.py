@@ -21,9 +21,9 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '10.61.113.156','render.com','.onrend
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
-}
+#DATABASES = {
+#    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
+#}
 
 # Application definition
 
