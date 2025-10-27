@@ -91,6 +91,8 @@ MIDDLEWARE = [
     
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 ROOT_URLCONF = 'BearApp.urls'
 
 TEMPLATES = [

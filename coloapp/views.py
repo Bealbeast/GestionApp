@@ -1,10 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.http import HttpResponse
 from .forms import TareaForm
 from .models import Tarea
 
 def home(request):
     return redirect('dashboard')
+
+def ver_usuarios(request):
+    usuarios = User.objects.all()
+    return HttpResponse("<br>".join([u.username for u in usuarios]))
+
 
 @login_required
 def dashboard(request):

@@ -6,9 +6,7 @@ __pycache__/
 *.swp
 
 # Django
-db.sqlite3
 .env
-/staticfiles/
 /media/
 
 # VSCode
