@@ -15,6 +15,7 @@ urlpatterns = [
     path('tarea/<int:tarea_id>/completar/', views.completar_tarea, name='completar_tarea'),
     path('tarea/<int:tarea_id>/desmarcar/', views.desmarcar_tarea, name='desmarcar_tarea'),
     path('historial/', views.historial_tareas, name='historial_tareas'),
+    path('migrar/', views.ejecutar_migraciones),
 ]
 
 if settings.DEBUG:
