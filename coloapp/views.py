@@ -2,16 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from django.core.management import  call_command
 from .forms import TareaForm
 from .models import Tarea
-
-def home(request):
-    return redirect('dashboard')
-
-def ver_usuarios(request):
-    usuarios = User.objects.all()
-    return HttpResponse("<br>".join([u.username for u in usuarios]))
-
 
 @login_required
 def dashboard(request):
@@ -50,3 +43,14 @@ def agregar_tarea(request):
         form = TareaForm()
     return render(request, 'agregar_tarea.html', {'form': form})
 
+
+def home(request):
+    return redirect('dashboard')
+
+def ver_usuarios(request):
+    usuarios = User.objects.all()
+    return HttpResponse("<br>".join([u.username for u in usuarios]))
+
+def ejecutar_migraciones(request):
+    call_command('migrate')
+    return HttpResponse("Migraciones ejecutadas")
